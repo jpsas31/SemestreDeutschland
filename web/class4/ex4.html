@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="text.js"> </script>
+  <meta charset="UTF-8">
+  <title>CAI - WebTech: Exercise 4</title>
+</head>
+
+<body>
+  <h1>This is exercise 4</h1>
+  <p>This assignment will give you practice creating HTML forms and using Javascript/JQuery
+    to process their contents to generate interesting or useful outputs. You will learn to:</p>
+
+  <ul>
+    <li>create simple HTML forms with input elements and a button,</li>
+    <li>write Javascript functions that are used as event handlers,</li>
+    <li>use AJAX to request data from a server,</li>
+    <li>manipulate the DOM</li>
+  </ul>
+
+  
+    <h3>Select an option:</h3>
+    <div style="margin-left: 20px;">
+      <input type="radio" id="t1" name="selection">
+      <label for="t1"> Text 1</label>
+      <input type="radio" id="t2" name="selection">
+      <label for="t2"> Text 2</label>
+    </div>
+    <input type="button" onclick="insertText()" style="margin: 20px; height: 40px; width: 200px; font-size: 16px;" value="Request text" />
+  
+
+  <h3>Text received:</h3>
+  <div id="text_block" style="border: solid 2px red; margin-left: 20px; padding: 5px; height: 300px;">
+    <div> </div>
+  </div>
+
+
+
+</body>
+
+</html>

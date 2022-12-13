@@ -1,14 +1,18 @@
-import bs4
 import client
 def analyse(response):
     status, *headers=response.decode().split('\r\n\r\n')[0].split('\r\n')
-    print(status,headers)
+    return {'status':status, 'headers':headers}
+
     
 
       
 client = client.MyClient('www.httpbin.org',80)
 
-response=client.request('POST','post',{"user-agent": "fe"})
+
+response0=client.request('HEAD','get')
+response1=client.request('HEAD','get',{'user-agent': 'my-agent/1.01',
+'Accept-Encoding':'gzip'})
 
 
-analyse(response)
+print(analyse(response0))
+print(analyse(response1))

@@ -1,0 +1,30 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import plotly.express as px
+import plotly.io as pio
+
+crime_data = pd.read_csv("./atlcrime.csv",sep=",",low_memory=False)
+crime_data.drop(['number','npu', 'beat'],axis=1,inplace=True)
+crime_data.dropna(axis=0, inplace=True)
+subset = crime_data[:]
+subset.head()
+print(len(subset.loc['2010-01-01']))
+
+
+
+print(len(subset))
+# fig = px.scatter_geo(subset.location,
+#                     lat=subset.lat,
+#                     lon=subset.long)
+# fig.update_layout(
+#         title = 'Most trafficked US airports<br>(Hover for airport names)',
+#         geo_scope='usa',
+         
+#     )
+# fig.update_geos(showsubunits=True, subunitcolor="Blue")
+# fig = px.scatter_mapbox(subset, lat="lat", lon="long", hover_name="location", hover_data=["crime"],
+#                         color_discrete_sequence=["fuchsia"], size_max=15, zoom=10)
+# fig.update_layout(mapbox_style="open-street-map")
+# # fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+# fig.show()
